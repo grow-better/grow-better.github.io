@@ -1,0 +1,249 @@
+<html lang="he"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>נורות ירח ליתופן בהתאמה אישית</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-100" dir="rtl">
+    <header class="bg-gray-100 text-gray-900 font-bold">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="items-center">
+            <img width="150" height="150" class="mx-auto" src="./logo-website.png">
+            </div>
+                    <!-- Mobile Menu Toggle -->
+        <div class="block lg:hidden">
+            <button id="menuButton" class="text-gray-900 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Navigation Links (visible on larger screens) -->
+        <nav class="hidden lg:flex space-x-6">
+            <a href="#about" class="text-lg px-4">עוד עלינו</a>
+            <a href="#events" class="text-lg px-4">אירועים</a>
+            <a href="#order" class="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300">הזמנה מהירה</a>
+        </nav>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobileMenu" class="lg:hidden hidden bg-gray-900 text-white p-4">
+        <a href="#about" class="text-lg px-4">עוד עלינו</a>
+        <a href="#events" class="text-lg px-4">אירועים</a>
+        <a href="#order" class="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300">הזמנה מהירה</a>
+    </div>
+        
+    </header>
+    <section class="bg-cover bg-center text-white py-12 text-center w-full" style="background-image: url('./bg.png');">
+        <div class="bg-black bg-opacity-30 py-12">
+            <h2 class="text-3xl font-bold mb-4">מתנה שהיא סיפור</h2>
+            <p class="text-lg mb-4">הנורות שלנו לא סתם מתנה - הן יצירה אישית שמספרת סיפור.</p>
+            <a href="#order" class="bg-yellow-500 text-gray-900 px-6 py-3 rounded-full text-xl hover:bg-yellow-600">הזמן עכשיו</a>
+        </div>
+    </section>
+    <main class="container mx-auto p-6">       
+<section class="py-12">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-8">רגעים שלא שוכחים</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <!-- Example 1 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://media.printables.com/media/prints/23859/images/248515_10718b5f-8c8c-49dc-848e-edb200f38481/title.png" alt="Example Lamp 1" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">מתנה אישית לאהובים</h3>
+                    <p class="text-sm text-gray-500">מנורה עם עיצוב מותאם אישית, מושלם כמתנה אישית.</p>
+                </div>
+            </div>
+            <!-- Example 2 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://ae-pic-a1.aliexpress-media.com/kf/HTB1Kn.ZXoLrK1Rjy1zbq6AenFXaI.jpg_960x960q75.jpg_.avif" alt="Example Lamp 2" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">עמדת כניסה לחתונה</h3>
+                    <p class="text-sm text-gray-500">מנורה מרהיבה עם תמונה מותאמת אישית לפי בחירתך.</p>
+                </div>
+            </div>
+            <!-- Example 3 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://lehadesign.at/cdn/shop/products/il_fullxfull.4688885032_6bun.jpg?v=1699784261" alt="Example Lamp 3" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">מתנת יום הולדת בלתי נשכחת</h3>
+                    <p class="text-sm text-gray-500">מנורה ייחודית שתוסיף חום לבית או למשרד.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        <section id="about" class="py-10">
+            <h2 class="text-3xl font-bold text-center mb-4">עלינו – נורות ירח ליתופן בעיצוב אישי</h2>
+            <p class="text-lg text-center mb-6">ברוכים הבאים לעסק שלנו, המתמחה בהדפסות תלת-ממד מותאמות אישית של נורות ירח ליתופן. אנחנו מביאים לכם את האפשרות להעניק מתנה ייחודית ומרגשת עם דגש על איכות, עיצוב אישי ושירות מקצועי. כעסק מקומי, אתם תומכים בייצור מקומי ומסייעים לנו להמשיך לייצר מוצרים איכותיים ושירות מותאם אישית.</p>
+        
+            <div class="container mx-auto px-6 md:px-12">
+                <h3 class="text-2xl font-semibold mb-4">עבודת יצירה עם תוצאה מושלמת</h3>
+                <p class="text-lg mb-6">כל נורת ירח שלנו היא יצירה מותאמת אישית. אנו משתמשים בטכנולוגיית הדפסה תלת-ממד מתקדמת כדי להבטיח שהמוצר הסופי יהיה בדיוק מה שדמיינתם – תמונה, תאריך או כל עיצוב אחר שתרצו. אנחנו לא מתפשרים על איכות, כל נורה שעוברת דרכנו היא יצירה שנעשית באהבה.</p>
+        
+                <h3 class="text-2xl font-semibold mb-4">חוויה מותאמת אישית</h3>
+                <p class="text-lg mb-6">המשמעות של מתנה כמו נורת ירח ליתופן היא הרבה מעבר למוצר – מדובר בזיכרון אישי ומרגש. כל לקוח ולקוחה שלנו מקבלים שירות מותאם אישית, כדי להבטיח שהתוצאה תענה על הציפיות שלכם ותהפוך למתנה שלא תשכחו.</p>
+        
+                <h3 class="text-2xl font-semibold mb-4">היתרונות שלנו</h3>
+                <ul class="list-disc pl-6 text-lg mb-6">
+                    <li>עיצוב אישי – כל נורת ירח נבנית לפי בקשה ספציפית.</li>
+                    <li>איכות גבוהה – כל תהליך הייצור נעשה בקפידה, עם שימוש בטכנולוגיה מתקדמת.</li>
+                    <li>שירות אישי – אנחנו תמיד כאן כדי לעזור ולהדריך אתכם בתהליך.</li>
+                    <li>מהירות – כל הזמנה תבוצע בצורה מקצועית ובזמן קצר.</li>
+                    <li>מתנה עם משמעות – כל נורת ירח היא יצירת אומנות שתשאיר רושם לאורך זמן.</li>
+                </ul>
+        
+                <h3 class="text-2xl font-semibold mb-4">התחילו ליצור איתנו</h3>
+                <p class="text-lg mb-6">נורת הירח שלנו לא רק מוארת – היא מספרת סיפור. תנו לנו להראות לכם איך אפשר להחיות זיכרונות וליצור מתנה שתהפוך לחלק בלתי נשכח מהחיים שלכם ושל מי שיקבל אותה.</p>
+        
+                <p class="text-lg text-center mt-6">הצטרפו אלינו והתחילו ליצור את נורת הירח האישית שלכם עוד היום, ותמכו בייצור מקומי.</p>
+            </div>
+        </section>
+        
+        
+        <section id="events" class="p-10">
+            <h2 class="text-3xl font-bold text-center mb-4">המתנה המושלמת לכל אירוע – נורות ירח ליתופן</h2>
+            <div class="container mx-auto px-6 md:px-12">
+                <p class="text-lg text-center mb-6">נורות הירח שלנו מציעות מתנה ייחודית שמתאימה לכל סוגי האירועים, עם התאמה אישית שתפנה לכל אחד ואחת. הן לא רק יפות, אלא גם בעלות משמעות רבה, ולכל אירוע חשוב בישראל יש להן מקום. הנה כמה אירועים בהם תוכלו להעניק את המתנה המושלמת:</p>
+                <h3 class="text-2xl font-semibold mb-4">ימי הולדת – המתנה המושלמת לאדם הקרוב אליכם</h3>
+                <p class="text-lg mb-6">ליום הולדת, נורת ירח מותאמת אישית היא מתנה מרגשת שתשדרג כל חגיגה. תוכלו להוסיף לתוכה תמונה אהובה או תאריך חשוב, כך שתהפוך לזיכרון אישי ומשמעותי שהמעניק לא ישכח.</p>
+        
+                <h3 class="text-2xl font-semibold mb-4">חגיגות נישואין – מתנה רומנטית ומרגשת</h3>
+                <p class="text-lg mb-6">לחגיגות נישואין בישראל, נורת הירח יכולה להיות מתנה בלתי רגילה, שתשדר אהבה ורגש. אפשר לשלב בתוכה תמונות זוגיות או תאריך מיוחד, וליצור חוויה שנמשכת מעבר לאירוע עצמו.</p>
+        
+                <h3 class="text-2xl font-semibold mb-4">הצעת נישואין – יצירת רגע בלתי נשכח</h3>
+                <p class="text-lg mb-6">ההצעה לנישואין היא רגע מכונן, ונורת הירח יכולה להפוך את הרגע הזה לעוד יותר ייחודי. תמונה אישית, תאריך ההצעה או משפט מרגש – כל אלו יכולים להפוך את המתנה לזיכרון בלתי נשכח שילווה את הזוג לאורך כל חייהם.</p>
+                <h3 class="text-2xl font-semibold mb-4">סיום לימודים – מתנה משמעותית להישג מרשים</h3>
+                <p class="text-lg mb-6">סיום לימודים הוא רגע משמעותי בחיים, ונורת ירח מותאמת אישית יכולה להיות מתנה שתלווה את החוגגים לאורך זמן. היא תשדר תמיכה והערכה להשגיהם, ותהפוך את הרגע למיוחד ומרגש.</p>
+        
+                <h3 class="text-2xl font-semibold mb-4">מתנה לחגיגות אישיות – כל רגע טוב מספיק כדי לחגוג</h3>
+                <p class="text-lg mb-6">החיים מלאים בהזדמנויות להפתיע מישהו אהוב עם מתנה ייחודית. נורת הירח מתאימה במיוחד לאירועים כמו קידום בעבודה, חנוכת בית, או כל חגיגה אחרת שדורשת תשומת לב אישית. היא תהיה מתנה שמייחדת את הרגע ומעוררת זיכרונות לטווח ארוך.</p>
+        
+                <p class="text-lg text-center mt-6">נורת הירח המותאמת אישית שלנו היא מתנה שמתאימה לכל חגיגה ואירוע בישראל, ויכולה להיות המזכרת המושלמת לכל מי שרוצה להפתיע ולהרשים.</p>
+            </div>
+        </section>
+        <!-- Order Form Section -->
+        <section id="order" class="bg-white shadow-lg rounded-lg p-8 mt-10">
+            <h2 class="text-2xl font-bold mb-6">טופס הזמנה</h2>
+            <form id="orderForm" enctype="multipart/form-data" class="space-y-6">
+                <!-- Photo Upload -->
+                <div>
+                    <label class="block text-lg font-semibold mb-2">העלה תמונות (מקסימום 4, כל אחת עד 5MB)</label>
+                    <input type="file" id="photoUpload" name="photos" accept="image/jpeg, image/png" multiple="" class="block w-full p-2 border rounded" onchange="handleFileUpload(event)">
+                    <small id="fileError" class="text-red-500 hidden">קובץ לא תקין או שהגודל חרג!</small>
+                    <div id="thumbnails" class="mt-4 flex flex-wrap gap-4"></div>
+                </div>
+
+                <!-- Shape Selection -->
+                <div>
+                    <label class="block text-lg font-semibold mb-2">בחר צורת נורה</label>
+                    <select name="shape" id="shape" class="block w-full p-2 border rounded">
+                        <option value="sphere">כדור</option>
+                        <option value="rectangle">מלבן</option>
+                        <option value="cylinder">צילינדר</option>
+                        <option value="custom">מותאם אישית</option>
+                    </select>
+                    <textarea name="notes" id="notes" placeholder="אופציונלי: הוסף פרטי צורה מותאמת אישית" class="mt-2 block w-full p-2 border rounded"></textarea>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <label class="block text-lg font-semibold mb-2">פרטי יצירת קשר</label>
+                    <input type="text" name="name" placeholder="שמך" class="block w-full p-2 border rounded mb-2" required="">
+                    <input type="email" name="email" placeholder="האימייל שלך" class="block w-full p-2 border rounded mb-2" required="">
+                    <input type="text" name="phone" placeholder="הטלפון שלך" class="block w-full p-2 border rounded mb-2" required="">
+                </div>
+
+                <!-- Submit Button -->
+                <button id="sendOrderBtn" type="submit" class="bg-green-500 text-white px-6 py-3 rounded hover:bg-green-600">שלח הזמנה</button>
+            </form>
+        </section>
+        
+        
+    </main>
+    
+    <footer class="bg-gray-900 text-white py-4 mt-10 text-center">
+        © 2025 <a href="https://moon-lights.co.il">moon-lights.co.il</a> כל הזכויות שמורות.
+    </footer>
+
+    <script>
+        document.getElementById('menuButton').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        function validateFiles(event) {
+            const files = event.target.files;
+            const maxFiles = 4;
+            const maxSize = 5 * 1024 * 1024; // 5MB
+
+            if (files.length > maxFiles) {
+                document.getElementById('fileError').classList.remove('hidden');
+                event.target.value = "";
+                return;
+            }
+
+            for (const file of files) {
+                if (file.size > maxSize) {
+                    document.getElementById('fileError').classList.remove('hidden');
+                    event.target.value = "";
+                    return;
+                }
+            }
+
+            document.getElementById('fileError').classList.add('hidden');
+        }
+
+    
+        function handleFileUpload(event) {
+            validateFiles(event);
+            const files = event.target.files;
+            const thumbnailsContainer = document.getElementById('thumbnails');
+
+            thumbnailsContainer.innerHTML = ''; // Clear existing thumbnails
+
+            Array.from(files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.alt = file.name;
+                    img.classList.add('w-24', 'h-24', 'object-cover', 'rounded', 'border');
+                    thumbnailsContainer.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        document.getElementById('orderForm').addEventListener('submit', async (e) => {
+            document.getElementById('sendOrderBtn').disabled = true;
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+
+            try {
+                const response = await axios.post('https://4246de5bb732ef0379a3e03745b059a2.m.pipedream.net', formData, {
+                    headers: { 'Content-Type': 'multipart/form-data' },
+                });
+
+                if (response.status === 200) {
+                    e.target.reset();
+                    document.getElementById('thumbnails').innerHTML = ''; // Clear thumbnails on successful submission
+                    document.getElementById('order').innerHTML = '<span class="text-2xl font-bold mb-3">ההזמנה הושלמה</span><p id="successMessage" class="text-green-500 mt-4">הזמנתך נשלחה בהצלחה!</br>נשלח אליך מייל אישור.<br /><br /><br /><a href="#order" class="bg-yellow-500 text-gray-900 mt-4 px-6 py-3 rounded-full text-xl hover:bg-yellow-600">הזמנה נוספת</a></p>'; // Clear thumbnails on successful submission
+                }
+            } catch (error) {
+                document.getElementById('sendOrderBtn').disabled = false;
+                alert(error);
+            }
+            document.getElementById('sendOrderBtn').disabled = true;
+        });
+    </script>
+
+
+</body></html>
